@@ -1,0 +1,91 @@
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;
+  outline: none;
+}
+#result {
+  border: 2px solid rgb(220, 228, 232);
+  border-radius: 0.2rem;
+  position: relative;
+}
+#result input {
+  border: none;
+}
+#result::after {
+  content: "⯆";
+  margin-left: 0.5rem;
+  padding: 0.3rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#suggestions {
+    border-radius: 0.2rem;
+    margin: 0.5rem 0;
+    padding: 0;
+    transition: 0.5s ease-in-out;
+    max-height: 200px;
+    border: 1px solid rgb(220, 228, 232);
+    overflow-y: scroll;
+  }
+#suggestions li {
+  position: relative;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #35495e;
+  font-weight: 700;
+}
+#suggestions li:hover {
+  background-color: #41b883;
+}
+#suggestions li:hover::after {
+  content: "Select to add";
+  position: absolute;
+  right: 0;
+  font-size: 0.7rem;
+  margin: 0 1rem;
+}
+#suggestions li.selected-state {
+  background-color: #f3f3f3;
+}
+#suggestions li.selected-state:hover {
+  background-color: #ff6a6a;
+}
+#suggestions li.selected-state:hover::after {
+  content: "Select to remove";
+  position: absolute;
+  right: 0;
+  font-size: 0.7rem;
+  margin: 0 1rem;
+}
+span.state-item {
+  margin: 0.5rem;
+  background-color: #41b883;
+  padding: 0.3rem 0 0.3rem 0.5rem;
+  border-radius: 0.2rem;
+  color: white;
+  cursor: pointer;
+  max-width: 100%;
+  text-overflow: ellipsis;
+}
+.hide {
+  display: none;
+}
+span.state-item::after {
+  content: "✖";
+  margin-left: 0.5rem;
+  padding: 0.3rem;
+  color: #369a6e;
+  font-weight: bold;
+  border-radius: 0.2rem;
+}
+span.state-item:hover::after {
+  background-color: #369a6e;
+  color: white;
+}
+.selected-states {
+  display: flex;
+  flex-wrap: wrap;
+}
+
